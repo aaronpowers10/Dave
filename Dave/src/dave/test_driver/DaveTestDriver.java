@@ -28,8 +28,7 @@ import willie.core.Project;
 public class DaveTestDriver {
 
 	public static void main(String[] args) throws IOException {
-		
-		
+		runTest("Watson_Valve_Pos_2.in");
 	}
 	
 	private static void runTest(String fileName) throws IOException{
@@ -37,9 +36,9 @@ public class DaveTestDriver {
 			ArrayList<ObjectFactory> factories = new ArrayList<ObjectFactory>();
 			factories.add(new HydronicFactory());
 			
-			Project project = new Project(fileName,factories);
+			Project project = new Project(factories);
 			project.addSimulationUpdateListener(new ConsoleSimulationUpdateListener());
-			project.simulate();
+			project.simulate(fileName);
 			System.out.println("ITS OVER!");
 	}
 

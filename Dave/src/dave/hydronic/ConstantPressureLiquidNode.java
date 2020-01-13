@@ -106,6 +106,6 @@ public class ConstantPressureLiquidNode implements LiquidNode, Simulator,WillieO
 	
 	@Override
 	public void simulateStep1(){
-		nextTemperature = temperature - timeManager.dt()/sumHeatCapacity(inletElements)*(sumHeatAdvection(inletElements) - sumHeatGain(inletElements));
+		nextTemperature = temperature - timeManager.dtHours()/sumHeatCapacity(inletElements)*(sumHeatAdvection(inletElements) - sumHeatGain(inletElements));
 	}
 }

@@ -110,8 +110,8 @@ public class VariableLiquidNode implements LiquidNode, Simulator,WillieObject, R
 	
 	@Override
 	public void simulateStep1(){
-		nextTemperature = temperature - timeManager.dt()/sumHeatCapacity(inletElements)*(sumHeatAdvection(inletElements) - sumHeatGain(inletElements));
-		nextPressure = pressure() + timeManager.dt()*alpha*(sumFlow(inletElements)-sumFlow(outletElements));		
+		nextTemperature = temperature - timeManager.dtHours()/sumHeatCapacity(inletElements)*(sumHeatAdvection(inletElements) - sumHeatGain(inletElements));
+		nextPressure = pressure() + timeManager.dtHours()*alpha*(sumFlow(inletElements)-sumFlow(outletElements));		
 		//nextPressure = pressure() + pressure()*timeManager.dt()*alpha*(sumFlow(inletElements)-sumFlow(outletElements));	
 		//nextPressure = pressure() + pressure()*timeManager.dt()*alpha*(sumFlow(inletElements));	
 	}

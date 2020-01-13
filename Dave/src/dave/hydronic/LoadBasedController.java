@@ -109,7 +109,7 @@ public class LoadBasedController implements WillieObject, Controller, RequiresPo
 	@Override
 	public void processPostStep() {
 		previousOutput = output;
-		timer.step(timeManager.dt());
+		timer.step(timeManager.dtHours());
 	}
 
 	@Override
